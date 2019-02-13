@@ -15,7 +15,9 @@ Get a list of relative paths of modified/added files in `$SVNBASE` from revision
 
 `svn diff --summarize -r $FROM:HEAD $SVNBASE | grep -v "D  " | awk '{ print $2 }' |  sed -e "s#$SVNBASE/##"`
 
-## Export files modified in `$SVNBASE` from revision `$FROM` 
+## Export only files modified from a revision
+
+Use this script to export/update all files from `$SVNBASE` in the current directory, from revision `$FROM` 
 
 ```bash
 export FROM=$1
